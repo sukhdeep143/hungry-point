@@ -9,6 +9,7 @@ import Cart from './pages/Cart';
 import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Profile from './pages/Profile';
 
 
 
@@ -24,7 +25,10 @@ const router = createBrowserRouter([
       {path: "Dashboard", element: <Dashboard />},
       {path: "errorpage", element: <ErrorPage />},
       {path: "login", element: <Login />},
-      {path: "register", element: <Register />}
+      {path: "register", element: <Register />},
+      {path: "profile", element: <Profile />}
+
+
 
 
     ]

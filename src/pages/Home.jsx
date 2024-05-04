@@ -1,9 +1,12 @@
 import React from 'react'
+import Item from '../components/Item'
 
 const Home = () => {
   return (
     <div>
-      Home
+      <Item />
+      
+
     </div>
   )
 }
