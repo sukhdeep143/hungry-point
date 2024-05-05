@@ -5,9 +5,9 @@ import Layout from './components/Layout';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home'
 import FoodItem from './pages/FoodItem';
-import Cart from './pages/Cart';
 import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
+import ShoppingCart from './pages/ShoppingCart';
 import Register from './pages/Register'
 import Profile from './pages/Profile';
 
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     children: [
       {index: true, element: <Home />},
       {path: "fooditem", element: <FoodItem />},
-      {path: "cart", element: <Cart />},
+      {path: "ShoppingCart", element: <ShoppingCart />},
       {path: "Dashboard", element: <Dashboard />},
       {path: "errorpage", element: <ErrorPage />},
       {path: "login", element: <Login />},

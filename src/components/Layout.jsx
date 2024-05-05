@@ -10,7 +10,11 @@ const Layout = () => {
       <Head>
        <Header />
       </Head>
+      
+
         <Outlet />
+  
+  
       <Footer />
     </div>
   )
@@ -27,3 +31,4 @@ const Head = styled.div`
   }
 
 `
+
