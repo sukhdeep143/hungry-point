@@ -7,7 +7,7 @@ import Home from './pages/Home'
 import FoodItem from './pages/FoodItem';
 import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
-import ShoppingCart from './pages/ShoppingCart';
+import ShoppingCart from './components/ShoppingCart';
 import Register from './pages/Register'
 import Profile from './pages/Profile';
 
