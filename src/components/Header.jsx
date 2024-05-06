@@ -20,7 +20,7 @@ const Header = () => {
         <ul className="navbar-nav list-unstyled ">
 
           <li className="nav-item pl-3">
-            <Link to='/cart' ><FaCartShopping /> Cart</Link>
+            <Link to='/shoppingCart' ><FaCartShopping /> Cart</Link>
           </li>
 
           <li className="nav-item pl-3">

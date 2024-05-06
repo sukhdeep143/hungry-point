@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import ShoppingCart from '../pages/ShoppingCart';
+// import ShoppingCart from '../pages/ShoppingCart';
 
 
 const FoodItem = ({id, name, description, Thumbnail}) => {
@@ -15,7 +15,7 @@ const FoodItem = ({id, name, description, Thumbnail}) => {
                     <h5 className="card-title">{name}</h5>
                     <p className="card-text">{description}</p>
                     <Link to='/ShoppingCart' className="btn btn-primary">
-                       
+                       <p>Add to card</p>
                     </Link>
                 </div>
                 </div>
@@ -38,9 +38,13 @@ const Container = styled.div`
 `
 
 const Card = styled.div`
-  /* background-color: red; */
-
-  width: 15rem; /* Set the width of the card */
+  width: 15rem;
   
-`
-
+  /* Set the maximum height for the image container */
+  .card-img-top {
+    max-height: 400px; /* Adjust the height as needed */
+    object-fit: cover; /* Maintain aspect ratio while covering the container */
+  }
+  
+  /* Other styles */
+`;
