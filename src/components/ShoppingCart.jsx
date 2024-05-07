@@ -18,9 +18,9 @@ const ShoppingCart = () => {
             <img src={item.Thumbnail} alt={item.name} />
             <p>{item.name}</p>
             <p>Quantity: {item.quantity}</p>
-            <button onClick={() => increaseQuantity(index)}> +1 </button>
-            <button onClick={() => decreaseQuantity(index)}>-1</button>
-            <button onClick={() => clearCart(index)}>Clear</button> {/* Pass index to clearCart */}
+            <button className="btn btn-primary ml-2 pl-2" onClick={() => decreaseQuantity(index)}>-1</button>
+            <button className="btn btn-primary ml-2 pl-2" onClick={() => increaseQuantity(index)}> +1 </button>
+            <button className="btn btn-primary ml-2 pl-3" onClick={() => clearCart(index)}>Clear</button> {/* Pass index to clearCart */}
           </div>
         ))}
       </Card>
