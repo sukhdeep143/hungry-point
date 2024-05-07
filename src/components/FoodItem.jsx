@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useCart } from '../contexts/CartContext';
+import styled from 'styled-components';
 
-const FoodItem = ({ id, name, description, Thumbnail, items }) => {
-  const [quantity, setQuantity] = useState(1); // State for quantity of the item
+const FoodItem = ({ id, name, description, Thumbnail }) => {
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
 
   const handleIncrement = () => {
     setQuantity(prevQuantity => prevQuantity + 1);
@@ -13,6 +15,10 @@ const FoodItem = ({ id, name, description, Thumbnail, items }) => {
     if (quantity > 1) {
       setQuantity(prevQuantity => prevQuantity - 1);
     }
+  };
+
+  const handleAddToCart = () => {
+    addToCart({ id, name, Thumbnail, quantity });
   };
 
   return (
@@ -31,27 +37,20 @@ const FoodItem = ({ id, name, description, Thumbnail, items }) => {
                   <button className="btn btn-outline-primary" onClick={handleIncrement}>+</button>
                 </div>
                 <Link
-  to={{
-    pathname: '/ShoppingCart',
-    state: {
-      items: [{ id, name, Thumbnail, quantity }] // Change item.quantity to quantity
-    }
-  }}
-  className="btn btn-primary"
->
-  Add to cart
-</Link>
-
-
-
+                  to="/ShoppingCart"
+                  className="btn btn-primary"
+                  onClick={handleAddToCart}
+                >
+                  Add to cart
+                </Link>
               </div>
             </div>
           </div>
         </Card>
       </Container>
     </div>
-  )
-}
+  );
+};
 
 export default FoodItem;
 
@@ -62,14 +61,14 @@ const Container = styled.div`
   align-items: flex-start; /* Align items vertically */
   gap: 2rem; /* Add gap between Card items */
   padding-bottom: 2rem;
-`
+`;
 
 const Card = styled.div`
   width: 15rem;
   /* Depth effect */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adjust the values as needed */
   transition: transform 0.3s ease-in-out;
-  border-radius: 12px; /* Adjust the value to control the roundness */
+  border-radius: 15px; /* Adjust the value to control the roundness */
 
   /* Set the maximum height for the image container */
   .card-img-top {
@@ -82,7 +81,7 @@ const Card = styled.div`
   /* Hover effect */
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adjust the values as needed */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
   }
   
   /* Other styles */

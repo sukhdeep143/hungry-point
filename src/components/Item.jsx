@@ -3,12 +3,12 @@ import FoodItem from './FoodItem';
 import styled from 'styled-components';
 
 
-import Thumbnail1 from '../images/coca-cola.jpg';
-import Thumbnail2 from '../images/Hot-dog.webp';
-import Thumbnail3 from '../images/images.jpg';
-import Thumbnail4 from '../images/pizaa.jpg';
-import Thumbnail5 from '../images/roti.jpg';
-import Thumbnail6 from '../images/smothe.jpg';
+import Thumbnail1 from '../images/pizaa.jpg';
+import Thumbnail2 from '../images/Burger.jpg';
+import Thumbnail3 from '../images/Sushi.jpg';
+import Thumbnail4 from '../images/Tacos.jpg';
+import Thumbnail5 from '../images/pasta.jpg';
+import Thumbnail6 from '../images/Sushi Burrito.jpg';
 
 
 
@@ -66,7 +66,8 @@ const Item = () => {
     <Container>
 
       {
-        food.map(({id, name, description, Thumbnail}  )=> <FoodItem key={id} name={name} description={description} Thumbnail={Thumbnail} />)
+        food.map(({id, name, description, Thumbnail}  )=>
+           <FoodItem key={id} name={name} description={description} Thumbnail={Thumbnail} />)
       }
       
     </Container>
