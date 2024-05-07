@@ -14,15 +14,28 @@ export const CartProvider = ({ children }) => {
 
   // Value to be provided by the context
 
+  const clearCart = (index) => {
+    setCartItems(prevItems => prevItems.filter((_, i) => i !== index));
+  };
 
-  const clearCart = () => {
-    setCartItems([]);
+  const increaseQuantity = (index) => {
+    setCartItems(prevItems =>
+      prevItems.map((item, i) => i === index ? { ...item, quantity: item.quantity + 1 } : item)
+    );
+  };
+
+  const decreaseQuantity = (index) => {
+    setCartItems(prevItems =>
+      prevItems.map((item, i) => i === index && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item)
+    );
   };
 
   const value = {
     cartItems,
     addToCart,
-    clearCart, // Expose clearCart function
+    clearCart,
+    increaseQuantity,
+    decreaseQuantity,
   };
 
 

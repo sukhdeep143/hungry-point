@@ -5,7 +5,9 @@ import styled from 'styled-components';
 
 const ShoppingCart = () => {
   // const { cartItems } = useCart();
-  const { cartItems, clearCart } = useCart();
+  const { cartItems, clearCart, increaseQuantity, decreaseQuantity } = useCart();
+
+
 
   return (
     <div>
@@ -16,7 +18,9 @@ const ShoppingCart = () => {
             <img src={item.Thumbnail} alt={item.name} />
             <p>{item.name}</p>
             <p>Quantity: {item.quantity}</p>
-            <button onClick={clearCart}>Clear Cart</button>
+            <button onClick={() => increaseQuantity(index)}> +1 </button>
+            <button onClick={() => decreaseQuantity(index)}>-1</button>
+            <button onClick={() => clearCart(index)}>Clear</button> {/* Pass index to clearCart */}
           </div>
         ))}
       </Card>
