@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+// import HomeImge from './HomeImge';
+
 
 const Footer = () => {
   return (
     <FooterContainer>
       <UpperFooter>
-        Content for the upper footer
+      {/* <HomeImage > */}
+        This is a simple footer 
+
+      {/* </HomeImage> */}
       </UpperFooter>
       <Divider />
       <LowerFooter>
@@ -20,11 +25,22 @@ const FooterContainer = styled.footer`
 `;
 
 const UpperFooter = styled.div`
+  position: relative; /* Ensure proper positioning context */
   padding: 20px;
   text-align: center;
   border-top: 1px solid black;
-
 `;
+
+// const HomeImage = styled(HomeImge)`
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover; /* Ensure the image covers the entire area */
+// `;
 
 const Divider = styled.hr`
   margin: 0; /* Remove default margin */
@@ -39,5 +55,7 @@ const LowerFooter = styled.div`
 
 
 `;
+
+ 
 
 export default Footer;

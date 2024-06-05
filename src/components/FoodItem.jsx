@@ -23,6 +23,7 @@ const FoodItem = ({ id, name, description, Thumbnail }) => {
 
   return (
     <div>
+      
       <Container>
         <Card>
           <div className="card" style={{ width: '15rem' }}>

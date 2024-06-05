@@ -5,11 +5,12 @@ import { FaCartShopping } from 'react-icons/fa6';
 import { CgProfile } from 'react-icons/cg';
 import styled from 'styled-components';
 
+
 const Header = () => {
   return (
     <StyledNav className="navbar navbar-expand-lg navbar-light fixed-top">
       <div className="container-fluid">
-        <Link to="/">
+        <Link to="home">
           <img src={Logo} alt="" width="30" height="30" />
         </Link>
         <Ulitem>
